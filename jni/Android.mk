@@ -14,7 +14,7 @@ LOCAL_CFLAGS    := -D"getlocaledecpoint()='.'" -DLUA_ANSI
 LOCAL_MODULE    := liblua
 LOCAL_SRC_FILES := liblua/lapi.c liblua/lauxlib.c liblua/lbaselib.c liblua/lbitlib.c liblua/lcode.c liblua/lcorolib.c liblua/lctype.c liblua/ldblib.c liblua/ldebug.c liblua/ldo.c liblua/ldump.c liblua/lfunc.c liblua/lgc.c liblua/linit.c liblua/liolib.c liblua/llex.c liblua/lmathlib.c liblua/lmem.c liblua/loadlib.c liblua/lobject.c liblua/lopcodes.c liblua/loslib.c liblua/lparser.c liblua/lstate.c liblua/lstring.c liblua/lstrlib.c liblua/ltable.c liblua/lua.c liblua/ltablib.c liblua/ltm.c liblua/lundump.c liblua/lvm.c liblua/lzio.c
  
-include $(BUILD_SHARED_LIBRARY)
+include $(BUILD_STATIC_LIBRARY)
 
 
 ###########
@@ -37,7 +37,7 @@ tparam.c \
 version.c
 
 LOCAL_MODULE := libtermcap
-include $(BUILD_SHARED_LIBRARY)
+include $(BUILD_STATIC_LIBRARY)
 
 ################
 # Lib ReadLine #
@@ -47,7 +47,7 @@ LOCAL_PATH := $(TOP_PATH)/readline
 
 include $(CLEAR_VARS)
 
-LOCAL_SHARED_LIBRARIES := libtermcap
+LOCAL_STATIC_LIBRARIES := libtermcap
 
 LOCAL_CFLAGS := \
 -DHAVE_CONFIG_H \
@@ -88,7 +88,7 @@ mbutil.c \
 tilde.c
 
 LOCAL_MODULE := libreadline
-include $(BUILD_SHARED_LIBRARY)
+include $(BUILD_STATIC_LIBRARY)
 
 #############
 # Proxmark3 #
@@ -99,7 +99,7 @@ LOCAL_PATH := $(TOP_PATH)/proxmark3
 
 include $(CLEAR_VARS)
 
-LOCAL_SHARED_LIBRARIES := libtermcap libreadline liblua
+LOCAL_STATIC_LIBRARIES := libtermcap libreadline liblua
 
 LOCAL_CFLAGS := -std=c99 -DCMIN=1 -DCTIME=0 -fPIE
 LOCAL_LDFLAGS += -fPIE -pie

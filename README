@@ -7,13 +7,14 @@ This is the proxmark3 client for Android. You'll need a proxmark3 board, a roote
 
 Devices known to work:
 - LG G3 with proxdroid3 RDV2 Board from ElecHouse (the board is powered by the phone).
+- Moto G2 with Proxmark RDV4 Board
 
 Build
 =====
 
 Install the Android SDK and NDK.
 Get the source from GitHub:
-  git clone https://github.com/FonkyCorp/proxdroid.git proxdroid
+  git clone https://github.com/dalgarins/proxdroid.git proxdroid
   cd proxdroid
   git submodule init
   git submodule update
